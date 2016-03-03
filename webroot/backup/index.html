@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- Template by Quackit.com -->
+<html lang="en">
+<head>
+    <script type="text/javascript" src="jquery.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Corporate 1</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                	<span class="glyphicon glyphicon-fire"></span> 
+                	AE
+                </a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="comments.html">Comments</a>
+                    </li>
+                </ul>
+
+				<!-- Login -->
+                <form class="navbar-form navbar-right" method="post" id="loginForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="password" placeholder="Password">
+                    </div>
+                    <button action="login" class="btn btn-default">Login</button>
+                    <a href="register.html" class="btn btn-default">Register</a>
+                </form>
+
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#loginForm').submit(function() {
+
+                            $.ajax({
+                                type: "POST",
+                                url: '/users/login.php',
+                                data: {
+                                    username: $("#username").val(),
+                                    password: $("#password").val()
+                                },
+                                success: function(data)
+                                {
+                                    if (data === 'Login') {
+                                        window.location.replace('/user-page.php');
+                                    }
+                                    else {
+                                        alert('Invalid Credentials');
+                                    }
+                                }
+                            });
+
+                        });
+
+                    });
+                </script>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	<div class="jumbotron feature">
+		<div class="container">
+			<h1><span class="glyphicon glyphicon-equalizer"></span>  ArrayEnterprises</h1>
+			<p>Objectively innovate empowered manufactured products whereas parallel platforms.</p>
+		</div>
+	</div>
+
+    <!-- Content -->
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Superior Collaboration
+                    <small>Visualize Quality</small>
+                </h1>
+                <p>Nullam eu arcu vel elit dapibus vulputate vitae tempus dolor. Nulla ut mauris at nibh luctus accumsan. Proin tellus augue, consequat eu justo non, tincidunt aliquam ipsum. Nunc ac turpis fermentum, commodo dui vitae, volutpat enim. Sed aliquet ex nisi, eget volutpat purus convallis ut. Suspendisse sed malesuada nunc. Maecenas ac magna tortor. Quisque lacinia magna tortor, sit amet eleifend nulla posuere non. Cras eget tincidunt magna, eu sagittis ex. Sed ut ex sem.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Feature Row -->
+        <div class="row">
+            <article class="col-md-4 article-intro">
+                <img class="img-responsive img-rounded" src="holder.js/700x300" alt="">
+                <h3>
+                    Efficiently Unleash
+                </h3>
+                <p>Donec tristique enim vitae felis aliquam tempus. Pellentesque leo risus, tempor sed euismod at, malesuada ut tortor. Morbi vulputate sapien et orci aliquam vulputate. In facilisis magna turpis, eget suscipit est dictum sit amet. Aliquam ultricies ornare ipsum, ut lacinia risus eleifend vitae. Etiam a velit lectus. Quisque vitae egestas massa, vel euismod ligula. Sed eget interdum dui. Morbi in dolor nulla.</p>
+            </article>
+            <article class="col-md-4 article-intro">
+                <img class="img-responsive img-rounded" src="holder.js/700x300" alt="">
+                <h3>
+                    Completely Synergize
+                </h3>
+                <p>Nam laoreet turpis eu libero pulvinar vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper augue a erat dictum varius. Nulla semper pharetra velit, id consequat nibh sollicitudin non. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            </article>
+
+            <article class="col-md-4 article-intro">
+                <img class="img-responsive img-rounded" src="holder.js/700x300" alt="">
+                <h3>
+                    Dynamically Procrastinate
+                </h3>
+                <p>Aenean et enim sollicitudin, consequat tellus non, tincidunt mauris. Mauris a euismod nulla. Aliquam finibus faucibus sem ut commodo. Quisque placerat eget velit a consequat. Cras nibh felis, vestibulum id ligula ut, eleifend finibus sem. Aenean id tincidunt metus. In ut quam vel lacus facilisis elementum id vitae massa. Proin mollis turpis ligula, sed malesuada libero varius non.</p>
+            </article>
+        </div>
+        <!-- /.row -->
+
+    </div>
+
+
+    <!-- /.container -->
+	
+	<footer>
+        <div class="small-print">
+        	<div class="container">
+        		<p>Copyright &copy; ArrayEnterprises 2016 </p>
+        	</div>
+        </div>
+	</footer>
+
+	
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- IE10 viewport bug workaround -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+	<!-- Placeholder Images -->
+	<script src="js/holder.min.js"></script>
+	
+</body>
+
+</html>

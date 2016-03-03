@@ -1,0 +1,32 @@
+php -S 127.0.0.1:8084 -t exercicio/webroot
+
+No comand line
+
+SQL do Banco de dados.
+
+CREATE TABLE users (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    access_level INT DEFAULT 1 NOT NULL,
+    name VARCHAR(63) NOT NULL,
+    email VARCHAR(127) NOT NULL UNIQUE,
+    password VARCHAR(127) NOT NULL,
+    photo VARCHAR(255) DEFAULT NULL,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
+CREATE TABLE comments (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    body TEXT NOT NULL,
+    user_id INT UNSIGNED NOT NULL,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    modified DATETIME ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY user_key (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE modifications (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    old_comment TEXT NOT NULL,
+    comment_id INT UNSIGNED NOT NULL,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY comment_key (comment_id) REFERENCES comments(id)
+);
